@@ -32,13 +32,14 @@ int main(int argc, char const *argv[]) {
     }
 
     //print the crypto text
+    printf("Encrypted text is:\n");
     for (int i=0; i<size; i++){
         printf ("%02X",c[i]);
     }
     printf("\n");
     
     //try to find the lenght of key
-    for (int nk=2; nk<10; nk++){
+    for (int nk=2; nk<20; nk++){
         if(q) {
             for (int i=0; i<256; i++){
                 q[i]=0;
@@ -113,7 +114,7 @@ int main(int argc, char const *argv[]) {
         printf("%02X ", key[t]);
     }
     printf("\n**********************\n");
-
+    
     printPlainText(c, size, nKey, key);
     
     free(c);
@@ -155,6 +156,7 @@ float getStandardDeviation(int cyper[], int size, int k){
 
 void printPlainText(int c[], int size, int nKey, int key[]){
     int indexKey=0;
+    printf("the plaintext should be:\n");
     for (int i=0; i<size; i++){
         printf ("%c",c[i]^key[indexKey]);
         indexKey = (++indexKey)%nKey;
