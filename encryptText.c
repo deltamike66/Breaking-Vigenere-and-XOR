@@ -15,7 +15,7 @@ main()
     {
         if (ch != '\n')
         {
-            fprintf(fpOut, "%02X", ch ^ key[i % KEY_LENGTH]); // ^ is logical XOR
+            fprintf(fpOut, "%02X", ch ^ key[i % KEY_LENGTH]); // XOR
             i++;
         }
     }
